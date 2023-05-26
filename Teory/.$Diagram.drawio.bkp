@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-05-26T10:10:56.588Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="i_6uQ4vL5rfViIIBzd5z" version="21.1.2" type="device">
+<mxfile host="Electron" modified="2023-05-26T10:11:10.247Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="-Su5N7KCd6B7TQZzqgQQ" version="21.1.2" type="device">
   <diagram name="Page-1" id="oUM062tR2A0WpDPoO0nr">
     <mxGraphModel dx="1657" dy="623" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -157,7 +157,7 @@
         <mxCell id="WUAcNM_5PHBYcMZc-dun-41" value="possiede" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
           <mxGeometry x="-109" y="458" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="WUAcNM_5PHBYcMZc-dun-42" value="ha" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+        <mxCell id="WUAcNM_5PHBYcMZc-dun-42" value="scritto" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
           <mxGeometry x="396" y="106" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="WUAcNM_5PHBYcMZc-dun-43" value="N_Copie" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
