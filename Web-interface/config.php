@@ -2,7 +2,7 @@ $<?php
 $servename = "localhost";
 $username = "tobia";
 $password = "password";
-$db = "bibloteca";
+$db = "biblioteca";
 try {
 	// Connessione al database
 	$link = mysqli_connect($servename, $username, $password, $db);	// db_ip, db_username, db_password, db_name
@@ -12,6 +12,5 @@ try {
 
 echo "OK!" . PHP_EOL;
 
-mysqli_close($link);
 
 ?>
