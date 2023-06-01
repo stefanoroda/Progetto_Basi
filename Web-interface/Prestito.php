@@ -1,17 +1,20 @@
 <?php 
 
     //IMPORTA LA CONNESSIONE DEL DATABASE
-
+    include_once("config.php");
     //CONTROLLO CHE I VALORI INIVIATI NON SIANO NULLI
-    //if $var != NULL CONTROLLO CHE LA VARIABILE NON SIA NULLA
-    $COD_PRESTITO   = $_POST['COD_PRESTITO'];
-    $DATA_PRESTITO = $_POST['DATA_PRESTITO'];
-    $MATRICOLA = $_POST['MATRICOLA'];
-    $COD_LIBRO = $_POST['COD_LIBRO'];
+    try{
+        $DATA_PRESTITO = $_POST['DATA_PRESTITO'];
+        $MATRICOLA = $_POST['MATRICOLA'];
+        $COD_LIBRO = $_POST['COD_LIBRO'];
+    }catch(mysqli_sql_exception $e) {
+        echo("Errore per Authors.csv: " . $e->getMessage());
+    }
+    
 
 
     //INTERROGAZIONI (QUERY)
-
+    $sql = 
 
 ?>
 
@@ -21,7 +24,9 @@
     
         <title>Pagina Prestito</title>
         <!-- INSERIMENTO DELLO STILE GRAFICO -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+        <link rel="stylesheet" href="css/retro.css">
+        <link rel="stylesheet" href="css/mycss.css">
+        
 
     <head>
 
