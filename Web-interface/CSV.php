@@ -85,7 +85,7 @@ include_once("config.php");
         echo "E' stato inserito correttamente.<br>";
         ?>
         <br>
-        <a href="./index.php">Home</a>
+        <a href="./index.html">Home</a>
     </body>
 </html>
 <?php
