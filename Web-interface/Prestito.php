@@ -2,40 +2,8 @@
 
     //IMPORTA LA CONNESSIONE DEL DATABASE
     include_once("config.php");
-    //CONTROLLO CHE I VALORI INIVIATI NON SIANO NULLI
-    /*try{
-        $DATA_PRESTITO = $_POST['DATA_PRESTITO'];
-        $MATRICOLA = $_POST['MATRICOLA'];
-        $COD_LIBRO = $_POST['COD_LIBRO'];
-    }catch(mysqli_sql_exception $e) {
-        echo("Errore per Authors.csv: " . $e->getMessage());
-    }
-    
 
-
-    //INTERROGAZIONI (QUERY)
-    $sql = 'INSERT INTO PRESTITO (MATRICOLA, COD_LIBRO, DATA_PRESTITO) VALUES ( '.$MATRICOLA.')'
-*/
 ?>
-
-<!--<html>
-
-    <head>
-    
-        <title>Pagina Prestito</title>
-    
-    
-        <link rel="stylesheet" href="css/retro.css">
-        <link rel="stylesheet" href="css/mycss.css">
-        
-
-    <head>
-
-    <body>
-         STAMPA INSERIMENTO 
-
-    </body>
-</html>-->
 
 <html>
     <head>
@@ -58,7 +26,7 @@
             </fieldset>
             <fieldset>
                 <label>Data prestito</label>
-                <input type="date" name="DATA_PRESTITO"  placeholder="GG/MM/AAAA">
+                <input type="date" name="DATA_PRESTITO"  placeholder="AAAA/MM/GG">
             </fieldset>
             <input type="submit" value="invia">
         </form>
@@ -80,7 +48,6 @@
         $MATRICOLA = $_POST['MATRICOLA'];
         $COD_LIBRO = $_POST['COD_LIBRO'];
         $DATA_PRESTITO = $_POST["DATA_PRESTITO"];
-        echo $DATA_PRESTITO;
     }catch(mysqli_sql_exception $e) {
         echo("Errore per Authors.csv: " . $e->getMessage());
     }
@@ -89,7 +56,7 @@
 
     //INTERROGAZIONI (QUERY)
     try{
-        $sql = "INSERT INTO PRESTITO (MATRICOLA, COD_LIBRO, DATA_PRESTITO) VALUES ( ".$MATRICOLA.", ".$COD_LIBRO.", ".$DATA_PRESTITO.");";
+        $sql = "INSERT INTO PRESTITO (MATRICOLA, COD_LIBRO, DATA_PRESTITO) VALUES ( '$MATRICOLA', '$COD_LIBRO', '$DATA_PRESTITO')";
 
         $query= mysqli_query($link, $sql);
     }catch(mysqli_sql_exception $e) {
