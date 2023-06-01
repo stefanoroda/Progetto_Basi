@@ -19,11 +19,14 @@
         <!-- STAMPA INSERIMENTO -->
 
         <h1>Ricerca di un titolo</h1>
-        <fieldset>
-            <label>Inserire titolo:</label>
-            <input type="text" name="TITOLO">
-        </fieldset>
-
+        <form method="post" action="Libro.php">
+            <fieldset>
+                <label>Inserire titolo:</label>
+                <input type="text" name="TITOLO">
+            </fieldset>
+            <input type="submit" value="invio"> 
+        </form>
+        
     </body>
 </html>
 
@@ -33,10 +36,8 @@
 $TITOLO   = $_POST['TITOLO'];
 
 try{
-    $sql = "SELECT * FROM LIBRO WHERE LIKE '%TITOLO%'";
-    if($sql == NULL){
-        $sql = "SELECT * FROM LIBRO ";
-    }
+    $sql = "SELECT * FROM LIBRO WHERE TITOLO LIKE '%TITOLO%'";
+    
 
 
     $query = mysqli_query($link, $sql);
