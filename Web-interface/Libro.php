@@ -1,20 +1,7 @@
 <?php 
 
     //IMPORTA LA CONNESSIONE DEL DATABASE
-
-    //CONTROLLO CHE I VALORI INIVIATI NON SIANO NULLI
-    //if $var != NULL CONTROLLO CHE LA VARIABILE NON SIA NULLA
-    $COD_LIBRO   = $_POST['COD_LIBRO'];
-    $ISBN = $_POST['ISBN'];
-    $TITOLO = $_POST['TITOLO'];
-    $ANNO_PUB = $_POST['ANNO_PUB'];
-    $LINGUA = $_POST['LINGUA'];
-    $COD_SUC = $_POST['COD_SUC'];
-
-
-
-    //INTERROGAZIONI (QUERY)
-
+    include_once("config.php");
 
 ?>
 
@@ -31,5 +18,43 @@
     <body>
         <!-- STAMPA INSERIMENTO -->
 
+        <h1>Ricerca di un titolo</h1>
+        <fieldset>
+            <label>Inserire titolo:</label>
+            <input type="text" name="TITOLO">
+        </fieldset>
+
     </body>
 </html>
+
+
+<?php
+
+$TITOLO   = $_POST['TITOLO'];
+
+try{
+    $sql = "SELECT * FROM LIBRO WHERE LIKE '%TITOLO%'";
+    if($sql == NULL){
+        $sql = "SELECT * FROM LIBRO ";
+    }
+
+
+    $query = mysqli_query($link, $sql);
+    
+
+}catch(mysqli_sql_exception $e){
+    echo "Error: " . $e->getMessage();
+}
+
+mysqli_close($link);
+
+
+
+
+    
+
+
+
+
+
+?>
