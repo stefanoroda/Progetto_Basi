@@ -54,12 +54,12 @@ while($row= mysqli_fetch_array($query)){
     $i++;
 }
 
-foreach($libro):
-    echo $libro
-    echo $libro[1];
-    echo $libro[2];
-    echo $libro[3];
-
+foreach($libro as $lib):
+    echo $lib[0];
+    echo $lib[1];
+    echo $lib[2];
+    echo $lib[3];
+endforeach;
 mysqli_close($link);
 
 
