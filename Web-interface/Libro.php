@@ -3,6 +3,12 @@
     //IMPORTA LA CONNESSIONE DEL DATABASE
     include_once("config.php");
 
+    /*USE BIBLIOTECA;
+
+SELECT *
+FROM LIBRO
+WHERE TITOLO LIKE '%%';*/
+
 ?>
 
 <html>
@@ -33,7 +39,7 @@
 $TITOLO   = $_POST['TITOLO'];
 
 try{
-    $sql = "SELECT * FROM LIBRO WHERE LIKE '%TITOLO%'";
+    $sql = "SELECT * FROM LIBRO WHERE  LIKE '%TITOLO%'";
     if($sql == NULL){
         $sql = "SELECT * FROM LIBRO ";
     }
