@@ -1,4 +1,4 @@
-$<?php 
+<?php 
 $servename = "localhost";
 $username = "tobia";
 $password = "password";
@@ -10,7 +10,7 @@ try {
 	die("Non posso stabilire la connessione al db: " . $e->getMessage());
 }
 
-echo "OK!" . PHP_EOL;
+//echo "OK!" . PHP_EOL;
 
 
 ?>
