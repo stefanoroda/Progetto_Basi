@@ -11,8 +11,8 @@
     
         <title>Pagina Libro</title>
         <!-- INSERIMENTO DELLO STILE GRAFICO -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-
+        <link rel="stylesheet" href="css/retro.css">
+        <link rel="stylesheet" href="css/mycss.css">
     <head>
 
     <body>
@@ -22,7 +22,7 @@
         <form method="post" action="Libro.php">
             <fieldset>
                 <label>Inserire titolo:</label>
-                <input type="text" name="TITOLO">
+                <input type="text" name="TITOL">
             </fieldset>
             <input type="submit" value="invio"> 
         </form>
@@ -33,10 +33,10 @@
 
 <?php
 
-$TITOLO   = $_POST['TITOLO'];
+$TITOL   = $_POST['TITOL'];
 
 try{
-    $sql = "SELECT * FROM LIBRO WHERE TITOLO LIKE '%TITOLO%'";
+    $sql = "SELECT * FROM LIBRO WHERE TITOLO LIKE '%$TITOL%'";
     
 
 
@@ -46,6 +46,19 @@ try{
 }catch(mysqli_sql_exception $e){
     echo "Error: " . $e->getMessage();
 }
+
+$libro=array();
+$i=0;
+while($row= mysqli_fetch_array($query)){
+    $libro[$i]= $row;
+    $i++;
+}
+
+foreach($libro):
+    echo $libro
+    echo $libro[1];
+    echo $libro[2];
+    echo $libro[3];
 
 mysqli_close($link);
 
