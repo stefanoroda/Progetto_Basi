@@ -11,8 +11,8 @@
     
         <title>Pagina Libro</title>
         <!-- INSERIMENTO DELLO STILE GRAFICO -->
-        <link rel="stylesheet" href="css/retro.css">
-        <link rel="stylesheet" href="css/mycss.css">
+        <link rel="stylesheet" href="../css/retro.css">
+        <link rel="stylesheet" href="../css/mycss.css">
     <head>
 
     <body>

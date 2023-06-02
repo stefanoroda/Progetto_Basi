@@ -6,8 +6,8 @@ include_once("config.php");
     <head>
         <meta charset="UTF-8">
         <title>CSV</title>
-        <link rel="stylesheet" href="css/retro.css">
-        <link rel="stylesheet" href="css/mycss.css">
+        <link rel="stylesheet" href="../css/retro.css">
+        <link rel="stylesheet" href="../css/mycss.css">
     </head>
     <body>
         <h1>Inserimento dei CSV</h1>
@@ -16,7 +16,7 @@ include_once("config.php");
         <?php
         //open file autori.csv
         try{
-            $filename = '../20-21/Author.csv';
+            $filename = '../../20-21/Author.csv';
             $file=fopen($filename,'r');
             while(($row = fgetcsv($file, 1000, ",")) != FALSE){
                 $sql = "INSERT INTO AUTORE VALUES('$row[0]', '$row[1]', '$row[2]', '$row[3]', '$row[4]')";
@@ -33,7 +33,7 @@ include_once("config.php");
         <?php
         //open file Library_Branch.csv
         try{
-            $filename = '../20-21/Library_Branch.csv';
+            $filename = '../../20-21/Library_Branch.csv';
             $file = fopen($filename,'r');
             while(($row = fgetcsv($file, 1000, ",")) != FALSE){
                 $row[2] = str_replace("'", "\'", $row[2]);
@@ -53,7 +53,7 @@ include_once("config.php");
         <?php
         //open file Books.csv
         try{
-            $filename = '../20-21/Book.csv';
+            $filename = '../../20-21/Book.csv';
             $file = fopen($filename, 'r');
             while(($row = fgetcsv($file, 1000, ",")) != FALSE){
                 $sql = "INSERT INTO LIBRO VALUES('$row[0]', '$row[1]', '$row[2]', '$row[3]', '$row[4]', '$row[5]')";
@@ -72,7 +72,7 @@ include_once("config.php");
         <?php
         //open file Book_Authors.csv
         try{
-            $filename = '../20-21/Book_Authors.csv';
+            $filename = '../../20-21/Book_Authors.csv';
             while(($row = fgetcsv($file, 1000, ",")) !== FALSE){
                 $sql = "INSERT INTO BOOK_AUTHORS VALUES('$row[0]', '$row[1]', '$row[2]')";
                 $query = mysqli_query($link,$sql);
@@ -85,7 +85,7 @@ include_once("config.php");
         echo "E' stato inserito correttamente.<br>";
         ?>
         <br>
-        <a href="./index.html">Home</a>
+        <a href="../index.html">Home</a>
     </body>
 </html>
 <?php
