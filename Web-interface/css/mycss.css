@@ -55,3 +55,7 @@ input[type=number] {
     border-radius: 6px;
     border: none;
 }
+
+.table tbody tr.table-indent{
+    padding-left:50px;
+}

@@ -25,10 +25,12 @@
                 <input type="text" name="TITOL">
                 <input type="submit" value="invio"> 
             </fieldset>
+            
         </form>
         <a href="../index.html">Home</a>
         <br><br>
-        <table>        
+        <table>
+    
         <tr>
             <th>Titolo</th>
             <th>ISBN</th>
@@ -68,6 +70,8 @@
 
 
         ?>
+
+          
         </table>
     </body>
 </html>
