@@ -30,6 +30,8 @@
             </fieldset>
             <input type="submit" value="invia">
         </form>
+        <br>
+        <a href="index.html">Home</a>
     </body>
 </html>
 
