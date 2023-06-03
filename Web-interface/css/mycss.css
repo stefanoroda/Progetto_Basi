@@ -56,6 +56,17 @@ input[type=number] {
     border: none;
 }
 
-.table tbody tr.table-indent{
-    padding-left:50px;
-}
+table {
+    table-layout: auto;
+    width: auto;
+    max-width: 100%;
+    border-collapse: collapse;
+  }
+  
+  td, th {
+    padding: 8px;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

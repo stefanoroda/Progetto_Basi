@@ -18,7 +18,7 @@
     <body>
         <!-- STAMPA INSERIMENTO -->
 
-        <h1>Ricerca di un titolo</h1>
+        <h1>Ricerca titolo di un libro</h1>
         <form method="post" action="Libro.php">
             <fieldset>
                 <label>Inserire titolo:</label>
@@ -30,12 +30,14 @@
         <a href="../index.html">Home</a>
         <br><br>
         <table>
-    
+    <thead>
         <tr>
             <th>Titolo</th>
             <th>ISBN</th>
             <th>Succursale</th>
         </tr>
+        </thead>
+        <tbody>
         <?php
 
             $TITOL   = $_POST['TITOL'];
@@ -71,7 +73,7 @@
 
         ?>
 
-          
+    </tbody>
         </table>
     </body>
 </html>

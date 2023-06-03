@@ -1,16 +1,12 @@
 <?php 
 
     //IMPORTA LA CONNESSIONE DEL DATABASE
-
-    //CONTROLLO CHE I VALORI INIVIATI NON SIANO NULLI
-    //if $var != NULL CONTROLLO CHE LA VARIABILE NON SIA NULLA
+    include_once("config.php");
     $COD_AUTORE   = $_POST['COD_AUTORE'];
-    $NOME = $_POST['NOME'];
-    $DATA_NASCITA = $_POST['DATA_NASCITA'];
-    $LUOGO_NASCITA = $_POST['LUOGO_NASCITA'];
 
 
-    //INTERROGAZIONI (QUERY)
+    
+
 
 
 ?>
@@ -27,6 +23,44 @@
 
     <body>
         <!-- STAMPA INSERIMENTO -->
+        <table>
+            <tr>
+                <th>Codice Libro</th>
+                <th>Titolo Libro</th>
+                <th>ISBN</th>
+                <th>Lingua</th>
+                <th>Data pubblicazione</th>
+            </tr>
+            <?php
+            try{
+                $sql = "SELECT LIBRO.*
+                        FROM (LIBRO
+                        INNER JOIN BOOK_AUTHORS ON BOOK_AUTHORS.COD_LIBRO = LIBRO.COD_LIBRO)
+                        WHERE COD_AUTORE='$COD_AUTORE'
+                        ORDER BY ANNO_PUB";
+                    
+                $query = mysqli_query($link, $sql);
 
+            }catch(mysqli_sql_exception $e){
+                echo "Error: " . $e->getMessage();
+            }
+            $libro=array();
+            $i=0;
+            while($row= mysqli_fetch_array($query)){
+                $libro[$i]= $row;
+                $i++;
+            }
+            foreach($libro as $lib):
+            echo "<tr>";
+            echo "<td>'$lib[0]'</td>";
+            echo "<td>'$lib[1]'</td>";
+            echo "<td>'$lib[2]'</td>"; 
+            echo "<td>'$lib[3]'</td>";
+            echo "<td>'$lib[4]'</td>";
+            echo "</tr>";
+            endforeach;
+            mysqli_close($link);
+            ?>
+        </table>
     </body>
 </html>
