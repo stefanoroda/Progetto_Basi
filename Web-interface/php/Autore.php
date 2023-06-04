@@ -23,6 +23,18 @@
 
     <body>
         <!-- STAMPA INSERIMENTO -->
+        <h1>
+            Ricerca libri per autore 
+        </h1>
+        <form method="post" action="../php/Autore.php">
+            <fieldset>
+                <input type="number" name="COD_AUTORE">
+                <input type="submit" value="Cerca">
+            </fieldset>
+        </form>
+        <br>
+        <a href="../index.html">Home</a>
+        <br><br>
         <table>
             <tr>
                 <th>Codice Libro</th>
@@ -52,11 +64,11 @@
             }
             foreach($libro as $lib):
             echo "<tr>";
-            echo "<td>'$lib[0]'</td>";
-            echo "<td>'$lib[1]'</td>";
-            echo "<td>'$lib[2]'</td>"; 
-            echo "<td>'$lib[3]'</td>";
-            echo "<td>'$lib[4]'</td>";
+            echo "<td>".$lib[0]."</td>";
+            echo "<td>".$lib[1]."</td>";
+            echo "<td>".$lib[2]."</td>"; 
+            echo "<td>".$lib[3]."</td>";
+            echo "<td>".$lib[4]."</td>";
             echo "</tr>";
             endforeach;
             mysqli_close($link);

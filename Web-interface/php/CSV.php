@@ -1,5 +1,6 @@
 <?php
 include_once("config.php");
+$error= FALSE;
 ?>
 
 <html>
@@ -82,6 +83,7 @@ include_once("config.php");
         //open file Book_Authors.csv
         try{
             $filename = '../../20-21/Book_Authors.csv';
+            $file = fopen($filename, 'r');
             while(($row = fgetcsv($file, 1000, ",")) !== FALSE){
                 $sql = "INSERT INTO BOOK_AUTHORS VALUES('$row[0]', '$row[1]', '$row[2]')";
                 $query = mysqli_query($link,$sql);
