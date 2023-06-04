@@ -23,10 +23,13 @@ include_once("config.php");
                 $query = mysqli_query($link,$sql);
             }
         } catch (mysqli_sql_exception $e) {
-            echo("Errore per Authors.csv: " . $e->getMessage());
+            echo("Errore per Authors.csv: " . $e->getMessage() . "<br>");
+            $error = TRUE;
         }
         
-        echo "E' stato inserito correttamente. <br>";
+        if($error!=TRUE){
+            echo "E' stato inserito correttamente.<br>";
+        }
         ?>
         <br>
         <p>Inserimento del file Library_Branch.csv:</p><br>
@@ -43,10 +46,13 @@ include_once("config.php");
                 
             }
         } catch (mysqli_sql_exception $e) {
-            echo("Errore per Library_Branch.csv: " . $e->getMessage());
+            echo("Errore per Library_Branch.csv: " . $e->getMessage() . "<br>");
+            $error = TRUE;
         }
         
-        echo "E' stato inserito correttamente.<br>";
+        if($error!=TRUE){
+            echo "E' stato inserito correttamente.<br>";
+        }
         ?>
         <br>
         <p>Inserimento del file Books.csv:</p><br>
@@ -62,10 +68,13 @@ include_once("config.php");
 
             }
         } catch (mysqli_sql_exception $e) {
-            echo("Errore per Books.csv: " . $e->getMessage());
+            echo("Errore per Books.csv: " . $e->getMessage() . "<br>");
+            $error = TRUE;
         }
         
-        echo "E' stato inserito correttamente.<br>";
+        if($error!=TRUE){
+            echo "E' stato inserito correttamente.<br>";
+        }
         ?>
         <br>
         <p>Inserimento del file Book_Authors.csv:</p><br>
@@ -79,10 +88,13 @@ include_once("config.php");
 
             }
         } catch (mysqli_sql_exception $e) {
-            echo("Errore per Book_Authors.csv: " . $e->getMessage());
+            echo("Errore per Book_Authors.csv: " . $e->getMessage() . "<br>");
+            $error = TRUE;
+        }
+        if($error!=TRUE){
+            echo "E' stato inserito correttamente.<br>";
         }
         
-        echo "E' stato inserito correttamente.<br>";
         ?>
         <br>
         <a href="../index.html">Home</a>
