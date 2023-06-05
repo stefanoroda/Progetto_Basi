@@ -39,8 +39,18 @@
             <p>Consultare l’elenco degli utenti della biblioteca (con le informazioni principali).</p>
             <p>Query="SELECT * FROM UTENTE"</p>
             </ul>
-            <ul>5) <a href="5.php"> </a></ul>
-            <ul>6) <a href="6.php"> </a></ul>
+            <ul>5) <a href="html/RUtente.html"> Query_5</a>
+            <p>Ricerca di un utente della biblioteca e il suo storico dei prestiti (compresi quelli incorso)</p>
+            <p>Query="SELECT PRESTITO.COD_LIBRO, DATA_PRESTITO,TITOLO,ISBN,LINGUA,ANNO_PUB
+                FROM (PRESTITO 
+                INNER JOIN LIBRO ON PRESTITO.COD_LIBRO = LIBRO.COD_LIBRO) 
+                WHERE MATRICOLA="$MATRICOLA"</p>
+            </ul>
+            <ul>6) <a href="php/VPrestito.php"> Query_6</a>
+            <p>Consultare lo storico dei prestiti comprese le informazioni (sintetiche - nome,
+                cognome) sull’utente</p>
+            <p>Query=""</p>
+            </ul>
             <ul>7) <a href="7.php"> </a></ul>
             
         </lu>
