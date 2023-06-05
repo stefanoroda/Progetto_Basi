@@ -28,9 +28,17 @@
             </ul>
             <ul>2) <a href="html/Autore.html"> Query_2</a>
             <p>Visualizzazione di tutti i libri di un determinato autore, eventualmente suddivisi per anno di pubblicazione.</p>
+            <p>Query="SELECT LIBRO.*
+                FROM (LIBRO
+                INNER JOIN BOOK_AUTHORS ON BOOK_AUTHORS.COD_LIBRO = LIBRO.COD_LIBRO)
+                WHERE COD_AUTORE='$COD_AUTORE'
+                ORDER BY ANNO_PUB"</p>
             </ul>
             <ul>3) <a href="3.php"> </a></ul>
-            <ul>4) <a href="4.php"> </a></ul>
+            <ul>4) <a href="php/Utente.php"> Query_4</a>
+            <p>Consultare l’elenco degli utenti della biblioteca (con le informazioni principali).</p>
+            <p>Query="SELECT * FROM UTENTE"</p>
+            </ul>
             <ul>5) <a href="5.php"> </a></ul>
             <ul>6) <a href="6.php"> </a></ul>
             <ul>7) <a href="7.php"> </a></ul>

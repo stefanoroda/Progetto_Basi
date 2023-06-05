@@ -1,36 +1,63 @@
 <?php 
-
     //IMPORTA LA CONNESSIONE DEL DATABASE
-
-    //CONTROLLO CHE I VALORI INIVIATI NON SIANO NULLI
-    //if $var != NULL CONTROLLO CHE LA VARIABILE NON SIA NULLA
-    $MATRICOLA   = $_POST['MATRICOLA'];
-    $NUMERO_TEL = $_POST['NUMERO_TEL'];
-    $CAP = $_POST['CAP'];
-    $NUMERO = $_POST['NUMERO'];
-    $VIA = $_POST['VIA'];
-    $CITTA = $_POST['CITTA'];
-    $COGNOME = $_POST['COGNOME'];
-    $NOME = $_POST['NOME'];
-
-
-    //INTERROGAZIONI (QUERY)
-
-
+    include_once("config.php");
 ?>
 
+<!DOCTYPE html>
 <html>
-
     <head>
-    
-        <title>Pagina Utente</title>
-        <!-- INSERIMENTO DELLO STILE GRAFICO -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-
-    <head>
-
+        <meta charset="UTF-8">
+        <title>Utente</title>
+        <link rel="stylesheet" href="../css/retro.css">
+        <link rel="stylesheet" href="../css/mycss.css">
+    </head>
     <body>
-        <!-- STAMPA INSERIMENTO -->
+        <h1>Visualizzazione degli utenti</h1>
+        <br>
+        <a href="../index.html">Home</a>
+        <br><br>
+        <table>
+            <tr>
+                <th>Matricola</th>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Numero Telefono</th>
+                <th>Via</th>
+                <th>Numero Civico</th>
+                <th>CAP</th>
+                <th>Città</th>
+            </tr>
+            <?php
+            try{
+                $sql = "SELECT * FROM UTENTE";
+                $query=mysqli_query($link,$sql);
+            }catch (mysqli_sql_exception $e) {
+                echo("Errore per la visualizzazione di utenti: " . $e->getMessage() . "<br>");
+            }
 
+            $utente = array();
+            $i=0;
+            while($row= mysqli_fetch_array($query)){
+                $utente[$i]= $row;
+                $i++;
+            }
+
+            foreach($utente as $ut):
+                echo "<tr>";
+                echo "<td>".$ut[0]."</td>";
+                echo "<td>".$ut[1]."</td>";
+                echo "<td>".$ut[2]."</td>";
+                echo "<td>".$ut[3]."</td>";
+                echo "<td>".$ut[4]."</td>";
+                echo "<td>".$ut[5]."</td>";
+                echo "<td>".$ut[6]."</td>";
+                echo "<td>".$ut[7]."</td>";
+                echo "</tr>";
+            endforeach;
+
+            mysqli_close($link);
+            ?>
+        </table>
     </body>
 </html>
+    
