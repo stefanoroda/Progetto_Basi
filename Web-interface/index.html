@@ -34,7 +34,16 @@
                 WHERE COD_AUTORE='$COD_AUTORE'
                 ORDER BY ANNO_PUB"</p>
             </ul>
-            <ul>3) <a href="3.php"> </a></ul>
+            <ul>3) <a href="php/RAutore.php"> Query_3</a>
+            <p>Ricerca degli autori inserendo uno o più parametri (anche parziali), in forma libera o eventualmente guidata (per esempio menù a tendina con i soli valori possibili).</p>
+            <p>Query="SELECT * 
+                FROM AUTORE
+                WHERE COD_AUTORE LIKE '%$COD_AUTORE%'
+                AND NOME LIKE '%$NOME%'
+                AND COGNOME LIKE '%$COGNOME%'
+                AND DATA_NASCITA LIKE '%$DATA_NASCITA%'
+                AND LUOGO_NASCITA LIKE '%$LUOGO%'"</p>
+            </ul>
             <ul>4) <a href="php/Utente.php"> Query_4</a>
             <p>Consultare l’elenco degli utenti della biblioteca (con le informazioni principali).</p>
             <p>Query="SELECT * FROM UTENTE"</p>
@@ -49,9 +58,14 @@
             <ul>6) <a href="php/VPrestito.php"> Query_6</a>
             <p>Consultare lo storico dei prestiti comprese le informazioni (sintetiche - nome,
                 cognome) sull’utente</p>
-            <p>Query=""</p>
+            <p>Query="SELECT COD_PRESTITO, DATA_PRESTITO, PRESTITO.COD_LIBRO, PRESTITO.MATRICOLA, NOME, COGNOME, TITOLO 
+                FROM ((PRESTITO
+                INNER JOIN UTENTE ON PRESTITO.MATRICOLA=UTENTE.MATRICOLA)
+                INNER JOIN LIBRO ON PRESTITO.COD_LIBRO = LIBRO.COD_LIBRO)"</p>
             </ul>
             <ul>7) <a href="7.php"> </a></ul>
+            <ul>8) <a href="php/Statistiche.php"> Query_8</a>
+            </ul>
             
         </lu>
          
