@@ -28,7 +28,7 @@
             </ul>
             <ul>2) <a href="html/Autore.html"> Query_2</a>
             <p>Visualizzazione di tutti i libri di un determinato autore, eventualmente suddivisi per anno di pubblicazione.</p>
-            <p>Query="SELECT LIBRO.*
+            <p>Query="SELECT LIBRO *
                 FROM (LIBRO
                 INNER JOIN BOOK_AUTHORS ON BOOK_AUTHORS.COD_LIBRO = LIBRO.COD_LIBRO)
                 WHERE COD_AUTORE='$COD_AUTORE'
@@ -67,6 +67,16 @@
                 <p>Ricerca dei prestiti effettuati in un range di date – nel caso in cui non vengano
                     inserite date deve mostrare i prossimi in scadenza (quelli che scadranno in futuro)
                     comprese le informazioni sintetiche sull’autore.</p>
+                <p>Query=:
+                    <lu>
+                        <ul>a. "SELECT *
+                            FROM PRESTITO
+                            WHERE DATA_PRESTITO BETWEEN '$DATA1' AND '$DATA2'"</ul>
+                        <ul>b. "SELECT * 
+                            FROM PRESTITO
+                            WHERE DATA_PRESTITO &#60 '".date("Y-m-d", $DATA_SCADENZA)."'"</ul>
+                    </lu>
+                </p>
             </ul>
             <ul>8) <a href="php/Statistiche.php"> Query_8</a>
                 <p>Calcolo di statistiche relative a libri e autori:
@@ -94,6 +104,23 @@
                     </lu></p>
             </ul>
             
+        </lu>
+        <h3 align="center">Query aggiuntive:</h3>
+        <lu>
+            <ul>1) <a href="php/QAggiuntiva.php">Query_1A</a> 
+                <p>Inserita una lingua viene visualizzato il numero totale di libri con la sudetta lingua affiacato dal nome e cognome del suo autore che sono stati presi in prestito</p>
+                <p>Query="SELECT COUNT(LIBRO.COD_LIBRO),AUTORE.COD_AUTORE,AUTORE.NOME, AUTORE.COGNOME
+                    FROM (((PRESTITO
+                    INNER JOIN LIBRO 
+                    ON LIBRO.COD_LIBRO=PRESTITO.COD_LIBRO)
+                    INNER JOIN BOOK_AUTHORS
+                    ON BOOK_AUTHORS.COD_LIBRO=LIBRO.COD_LIBRO)
+                    INNER JOIN AUTORE
+                    ON BOOK_AUTHORS.COD_AUTORE=AUTORE.COD_AUTORE)
+                    WHERE LINGUA='$LINGUA'
+                    GROUP BY AUTORE.COD_AUTORE"</p>
+            </ul>
+            <ul>2) <a href="php/QAggiuntiva2.php"> Query_2A</a></ul>
         </lu>
          
     </body>
