@@ -63,8 +63,35 @@
                 INNER JOIN UTENTE ON PRESTITO.MATRICOLA=UTENTE.MATRICOLA)
                 INNER JOIN LIBRO ON PRESTITO.COD_LIBRO = LIBRO.COD_LIBRO)"</p>
             </ul>
-            <ul>7) <a href="7.php"> </a></ul>
+            <ul>7) <a href="php/RPrestito.php"> Query_7</a>
+                <p>Ricerca dei prestiti effettuati in un range di date – nel caso in cui non vengano
+                    inserite date deve mostrare i prossimi in scadenza (quelli che scadranno in futuro)
+                    comprese le informazioni sintetiche sull’autore.</p>
+            </ul>
             <ul>8) <a href="php/Statistiche.php"> Query_8</a>
+                <p>Calcolo di statistiche relative a libri e autori:
+                    <lu>
+                        <ul>a. Numero di libri pubblicati in un determinato anno.</ul>
+                        <ul>b. Numero di prestiti effettuati in una determinata succursale.</ul>
+                        <ul>c. Numero di libri pubblicati per autore.</ul>
+                    </lu></p>
+                <p>Query=:
+                    <lu>
+                        <ul>a. "SELECT COUNT(*) 
+                            FROM LIBRO
+                            WHERE ANNO_PUB LIKE '".$ANNO."'"</ul>
+                        <ul>b. "SELECT COUNT(*)
+                            FROM (PRESTITO
+                            INNER JOIN LIBRO 
+                            ON LIBRO.COD_LIBRO= PRESTITO.COD_LIBRO)
+                            WHERE COD_SUC LIKE '".$SUCCURSALE."'"</ul>
+                        <ul>c. "SELECT COUNT(*), NOME, COGNOME
+                            FROM ((LIBRO INNER JOIN BOOK_AUTHORS 
+                            ON BOOK_AUTHORS.COD_LIBRO=LIBRO.COD_LIBRO)
+                            INNER JOIN AUTORE
+                            ON AUTORE.COD_AUTORE=BOOK_AUTHORS.COD_AUTORE)
+                            GROUP BY AUTORE.COD_AUTORE"</ul>
+                    </lu></p>
             </ul>
             
         </lu>
