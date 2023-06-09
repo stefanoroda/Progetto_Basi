@@ -11,7 +11,7 @@
         <?php
         echo "Today is " . date("Y-m-d") . "<br>";
         $DATA_OGGI=strtotime(date("Y-m-d"));
-        $DATA_SCADENZA=strtotime("+1 month", $DATA_OGGI);
+        $DATA_SCADENZA=strtotime("+30 days", $DATA_OGGI);
         echo date("Y-m-d", $DATA_SCADENZA);
         ?>
     </body>
