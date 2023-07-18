@@ -1,0 +1,107 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red199\green204\blue211;
+\red253\green139\blue9;\red255\green255\blue255;\red200\green204\blue211;\red253\green139\blue9;\red255\green255\blue255;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c100000\c0;\cssrgb\c82173\c83747\c85895;
+\cssrgb\c100000\c61456\c0;\cssrgb\c100000\c100000\c99985\c0;\cssrgb\c82278\c83855\c85900;\cssrgb\c100000\c61456\c0;\cssrgb\c100000\c100000\c99985\c0;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid1\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat2\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid101\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat3\levelspace360\levelindent0{\*\levelmarker \{none\}}{\leveltext\leveltemplateid201\'00;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+
+\f0\fs36 \cf2 \cb3 Relazione Basi di Dati\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf2 Autori: Tobia e Stefano\
+Matricola: \
+\pard\pardeftab720\sa400\partightenfactor0
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Introduzione:
+\fs36 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa400\partightenfactor0
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Lo scopo di questo progetto \'e8, costruzione di una base di dati per la biblioteca dell'Universit\'e0 degli Studi di Ferrara e relativa interfaccia web.\
+Il progetto mira a gestire le informazioni sui libri, gli utenti e i prestiti all'interno della biblioteca al fine di fornire un sistema di consultazione efficiente.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Progettazione e creazione della base di dati:\
+\pard\pardeftab720\sa400\partightenfactor0
+\cf2 1.1 Diagramma ER:\
+\cf5 \cb6 Quando \'e8 nato? Per cosa \'e8 utilizzato?\cf2 \cb3 \
+Il primo passo del progetto consiste nella progettazione di un diagramma ER (Entity-Relationship) che descriva le entit\'e0 e le relazioni coinvolte nel sistema. Il diagramma ER rappresenta gli elementi principali come i libri, gli autori, gli utenti, le succursali e i prestiti, stabilendo le relazioni tra di loro.\
+\cf5 \cb6 Nel nostro diagramma ER abbiamo inserito le seguenti entit\'e0: ..\
+Con le seguenti associazioni:.. per il motivo\cf2 \cb3 \
+Di seguito la foto del nostro diagramma ER\
+1.2 Schema relazionale in terza forma normale (3NF):\
+\cf5 \cb6 Cosa serve la normalizzazione?\cf2 \cb3 \
+Successivamente, l'analisi del diagramma ER permette di creare uno schema relazionale in terza forma normale (3NF). Questo schema definisce le tabelle del database, identificando le chiavi primarie e le relazioni tra le tabelle in modo da eliminare la ridondanza dei dati e garantire l'integrit\'e0 dei dati.\
+Definizione di normalizzazione:\
+\cf5 \cb6 Esistono diversi tipi di forma normale, ogni forma richiede la precedente ed una clausola in pi\'f9 per gestire meglio l\'92integrit\'e0 dei dati ed eliminare la rindondanza.\
+1NF: \cf5 \cb6 (Regole)\cf5 \cb6 \
+2NF: \cf5 \cb6 (Regole)\cf5 \cb6 \
+3NF: (Regole)\
+Di seguito la foto del nostro diagramma ER trasformato in schema relazionale in terza forma normale:\
+\cf2 \cb3 \
+1.3 Script SQL:\
+\cf5 \cb6 Cos\'92\'e8 SQL dov\'92\'e8 nato? Perch\'e9 lo utilizziamo? Dove viene usato?\cf2 \cb3 \
+Una volta stabilito lo schema relazionale, vengono creati gli script SQL necessari per implementare la base di dati. Gli script includono istruzioni per la creazione delle tabelle, definendo i tipi di dato appropriati per ciascun campo. Inoltre, vengono forniti script per estrarre i dati da fonti esterne come link o file CSV e per inserire i dati ricavati all'interno delle tabelle del database. Sono inclusi anche script per l'inserimento di alcuni prestiti di libri.\
+\cf5 \cb6 Per l\'92estrazione dei dati dal file CSV sono disponibili due modalit\'e0:\
+1) Estrazione da file Tramite interfaccia MySQLWorbrench.\
+Passaggi:\
+2) Implementazione da PHP\
+Passaggi:\
+Di seguito la foto del codice (File \'85 da riga a riga ):\cf2 \cb3 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Realizzazione dell'interfaccia web-based:\
+\pard\pardeftab720\sa400\partightenfactor0
+\cf2 2.1 Pagine HTML/PHP:\
+\cf5 \cb6 Cose HTML e PHP dove sono nati e per cosa vengono usati? \cf2 \cb3 \
+La seconda fase del progetto riguarda la progettazione e l'implementazione di una serie di pagine HTML/PHP per gestire la biblioteca. Queste pagine forniscono un'interfaccia utente intuitiva e accessibile per accedere alle diverse funzionalit\'e0 della biblioteca.\
+\cf5 \cb6 Per questo tipo di progettazione abbiamo optato a creare un file index che riesca a contenere tutti i vari link per le varie funzionalit\'e0 del nostro DBMS, cos\'ec da avere mappatura per l\'92inserimento, funzionalit\'e0 principali (imposte dal compito) e funzionalit\'e0 aggiuntive.\cf2 \cb3 \
+\
+2.2 Funzionalit\'e0 principali:\
+Le pagine HTML/PHP devono includere le seguenti funzionalit\'e0 minime:\
+a. Ricerca di un libro per titolo: Gli utenti possono inserire il titolo del libro (anche parziale) per ottenere una lista dei libri corrispondenti, inclusi i dettagli sintetici come il titolo, l'ISBN, la succursale di appartenenza, ecc.\
+\cf5 \cb6 Seguente Query:\cf2 \cb3 \
+b. Visualizzazione dei libri di un autore: Gli utenti possono visualizzare tutti i libri di un autore specifico, suddivisi per anno di pubblicazione.\
+\pard\pardeftab720\sa400\partightenfactor0
+\cf8 \cb9 Seguente Query:\cf2 \cb3 \
+c. Ricerca degli autori: Gli utenti possono cercare gli autori inserendo uno o pi\'f9 parametri, come il nome o il cognome, utilizzando una ricerca libera o una selezione guidata.\
+\cf8 \cb9 Seguente Query:\cf2 \cb3 \
+d. Consultazione degli utenti: Gli utenti possono consultare l'elenco degli utenti della biblioteca, visualizzando le informazioni principali come il nome, il cognome e altre informazioni di contatto.\
+\cf8 \cb9 Seguente Query:\cf2 \cb3 \
+e. Ricerca di un utente e il suo storico dei prestiti: Gli utenti possono cercare un utente specifico e visualizzare il suo storico dei prestiti, inclusi quelli in corso.\
+\cf8 \cb9 Seguente Query:\cf2 \cb3 \
+f. Consultazione dello storico dei prestiti: Gli utenti possono consultare lo storico completo dei prestiti, inclusi i dettagli sintetici sull'autore.\
+\cf8 \cb9 Seguente Query:\cf2 \cb3 \
+g. Ricerca dei prestiti in un range di date: Gli utenti possono cercare i prestiti effettuati in un determinato intervallo di date. Se nessuna data viene specificata, vengono mostrati i prestiti futuri in scadenza, inclusi i dettagli sintetici sull'autore.\
+\cf8 \cb9 Seguente Query:\cf2 \cb3 \
+h. Calcolo di statistiche relative a libri e autori: Gli utenti possono ottenere statistiche come il numero di libri pubblicati in un determinato anno, il numero di prestiti effettuati in una determinata succursale e il numero di libri pubblicati per autore.\
+\cf8 \cb9 Seguente Query: \cf2 \cb3 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls3\ilvl0\cf2 \kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Interrogazioni aggiuntive:\
+\ls3\ilvl0\kerning1\expnd0\expndtw0 		\expnd0\expndtw0\kerning0
+Come parte del progetto, \'e8 richiesto l'aggiunta di al massimo 2 interrogazioni aggiuntive alle funzionalit\'e0 descritte in precedenza. Queste interrogazioni devono essere originali e interessanti, fornendo ulteriori informazioni o analisi sui libri, gli autori o i prestiti.\
+\pard\tx566\pardeftab720\partightenfactor0
+\cf2 \
+\cf5 \cb6 	Le nostre due interrogazioni aggiuntive le abbiamo fatte in previsione:\
+	\
+	Query 1:\
+\
+	Query 2:\cf2 \cb3 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 Conclusioni:\
+Il progetto di costruzione di una base di dati e di un'interfaccia web per la biblioteca universitaria dell'Universit\'e0 degli Studi di Ferrara \'e8 finalizzato a gestire in modo efficiente le informazioni sui libri, gli utenti e i prestiti. Attraverso la progettazione accurata dello schema relazionale e l'implementazione delle funzionalit\'e0 richieste, sar\'e0 possibile fornire un sistema completo e intuitivo per la consultazione e la gestione delle risorse bibliotecarie.\
+\
+\
+}
