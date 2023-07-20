@@ -53,7 +53,7 @@
             }
             echo "<table>
             <tr>
-            <th>Numero Libri</th>
+            <th>Numero Libri presi in prestito</th>
             <th>Codice Autore</th>
             <th>Nome Autore</th>
             <th>Cognome Autore</th>
