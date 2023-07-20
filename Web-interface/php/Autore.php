@@ -1,23 +1,11 @@
-<?php 
-
-    //IMPORTA LA CONNESSIONE DEL DATABASE
-    include_once("config.php");
-    $COD_AUTORE   = $_POST['COD_AUTORE'];
-
-
-    
-
-
-
-?>
-
 <html>
 
     <head>
     
         <title>Pagina Autore</title>
         <!-- INSERIMENTO DELLO STILE GRAFICO -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+        <link rel="stylesheet" href="../css/mycss.css">
+        <link rel="stylesheet" href="../css/retro.css">
 
     <head>
 
@@ -44,6 +32,14 @@
                 <th>Data pubblicazione</th>
             </tr>
             <?php
+
+            //IMPORTA LA CONNESSIONE DEL DATABASE
+            include_once("config.php");
+            if($_POST!= NULL){
+                $COD_AUTORE   = $_POST['COD_AUTORE'];
+            
+
+
             try{
                 $sql = "SELECT LIBRO.*
                         FROM (LIBRO
@@ -70,7 +66,7 @@
             echo "<td>".$lib[3]."</td>";
             echo "<td>".$lib[4]."</td>";
             echo "</tr>";
-            endforeach;
+            endforeach;}
             mysqli_close($link);
             ?>
         </table>

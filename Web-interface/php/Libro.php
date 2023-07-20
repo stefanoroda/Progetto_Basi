@@ -39,7 +39,7 @@
         </thead>
         <tbody>
         <?php
-
+            if($_POST != null) {
             $TITOL   = $_POST['TITOL'];
 
             try{
@@ -68,6 +68,7 @@
                 echo "<td>$lib[3]</td>";
                 echo "</tr>";
             endforeach;
+        }
             mysqli_close($link);
 
 

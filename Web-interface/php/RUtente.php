@@ -27,10 +27,9 @@
         </tr>
         <?php
         include_once("config.php");
-        if($_POST['MATRICOLA']== null){
-            echo "errore inserimento";
-        }
-        else{
+        if($_POST != null){
+          
+        
             $MATRICOLA = $_POST['MATRICOLA'];
         
             try{
