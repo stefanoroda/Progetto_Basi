@@ -21,12 +21,12 @@
         <br>
         <lu>
 
-            <ul>1) <a href="html/Libro.html"> Query_1 </a>
+            <ul>1) <a href="php/Libro.php"> Query_1 </a>
             <p>Ricerca di un libro inserendo il titolo (anche parziale) - nel caso in cui nessun
                 parametro venga specificato deve essere presentata la lista completa dei libri comprese le informazioni sintetiche del libro: titolo, isbn, in che succursale sono, ecc... (sintetiche - nome, cognome) sull’autore.</p>
             <p>Query="SELECT * FROM LIBRO WHERE TITOLO LIKE '%$TITOL%'"</p>
             </ul>
-            <ul>2) <a href="html/Autore.html"> Query_2</a>
+            <ul>2) <a href="php/Autore.php"> Query_2</a>
             <p>Visualizzazione di tutti i libri di un determinato autore, eventualmente suddivisi per anno di pubblicazione.</p>
             <p>Query="SELECT LIBRO *
                 FROM (LIBRO
@@ -48,7 +48,7 @@
             <p>Consultare l’elenco degli utenti della biblioteca (con le informazioni principali).</p>
             <p>Query="SELECT * FROM UTENTE"</p>
             </ul>
-            <ul>5) <a href="html/RUtente.html"> Query_5</a>
+            <ul>5) <a href="php/RUtente.php"> Query_5</a>
             <p>Ricerca di un utente della biblioteca e il suo storico dei prestiti (compresi quelli incorso)</p>
             <p>Query="SELECT PRESTITO.COD_LIBRO, DATA_PRESTITO,TITOLO,ISBN,LINGUA,ANNO_PUB
                 FROM (PRESTITO 
@@ -120,7 +120,20 @@
                     WHERE LINGUA='$LINGUA'
                     GROUP BY AUTORE.COD_AUTORE"</p>
             </ul>
-            <ul>2) <a href="php/QAggiuntiva2.php"> Query_2A</a></ul>
+            <ul>2) <a href="php/QAggiuntiva2.php"> Query_2A</a>
+                <p>Si visualizzano gli utenti che hanno effettuato il maggior numero di prestiti per un dipartimento, così da regolare al meglio il flusso dei prestiti, suddividendolo per dipartimento.</p>
+                <p>Query="SELECT UTENTE.MATRICOLA, UTENTE.NOME, UTENTE.COGNOME, CONTEGGIO.DIPARTIMENTO,CONTEGGIO.CONTEGGIO
+                    FROM UTENTE
+                     JOIN (
+                        SELECT PRESTITO.MATRICOLA, SUCCURSALE.DIPARTIMENTO, COUNT(*) AS CONTEGGIO
+                        FROM PRESTITO
+                        JOIN LIBRO ON LIBRO.COD_LIBRO = PRESTITO.COD_LIBRO
+                        JOIN SUCCURSALE ON LIBRO.COD_SUC = SUCCURSALE.COD_SUC
+                        GROUP BY PRESTITO.MATRICOLA, SUCCURSALE.DIPARTIMENTO
+                    ) AS CONTEGGIO ON CONTEGGIO.MATRICOLA = UTENTE.MATRICOLA ORDER BY CONTEGGIO DESC"</p>
+            </ul>
+
+                
         </lu>
          
     </body>
