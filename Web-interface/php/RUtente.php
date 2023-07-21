@@ -10,7 +10,6 @@
         <form method="post" action="../php/RUtente.php">
             <fieldset>
                 <label>Inserisci la Matricola dell'utente:</label>
-                <p>Inserire la matricola utente:</p>
                 <input type="number" name="MATRICOLA">
                 <input type="submit" value="Cerca">
             </fieldset>

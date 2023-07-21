@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>Query aggiuntiva 2</h1>
-        <p>Si visualizzano gli utenti che hanno effettuato un numero di prestiti per un dipartimento</p>
+        <p>Si visualizzano gli utenti che hanno effettuato un numero di prestiti per ogni dipartimento</p>
         <a href="../index.html">Home</a>
         <table>
             <tr>
