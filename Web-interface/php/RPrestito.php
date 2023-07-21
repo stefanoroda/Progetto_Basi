@@ -44,15 +44,15 @@
                 echo "Error1: " . $e->getMessage();
             }
         } else {
-            echo "Today is " . date("Y-m-d") . "<br>";
+            echo "Oggi è il " . date("Y-m-d") . "<br>";
             $DATA_OGGI=strtotime(date("Y-m-d"));
-            $DATA_SCADENZA=strtotime("+30 days", $DATA_OGGI);
-            echo "Date expiration is ".date("Y-m-d", $DATA_SCADENZA);
-
+            $DATA_SCADENZA=strtotime("-30 days", $DATA_OGGI);
+            echo "La data di scadenza è il ".date("Y-m-d", $DATA_SCADENZA);
+            //devo fare un while per ogni prestito gli controllo la data di scadenza se questa è maggioreuguale della data di oggi la stampo
             try{
                 $sql = "SELECT * 
                 FROM PRESTITO
-                WHERE DATA_PRESTITO<'".date("Y-m-d", $DATA_SCADENZA)."'";
+                WHERE DATEDIFF('".date("Y-m-d", $DATA_SCADENZA)."',DATA_PRESTITO)<30";
                 
 
 
@@ -62,6 +62,7 @@
             }catch(mysqli_sql_exception $e){
                 echo "Error2: " . $e->getMessage();
             }
+
         }
         $PRESTITO=array();
             $i=0;

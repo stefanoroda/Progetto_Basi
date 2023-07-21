@@ -16,6 +16,7 @@
         </h1>
         <form method="post" action="../php/Autore.php">
             <fieldset>
+                <p>Inserire il codice autore per la ricerca:</p>
                 <input type="number" name="COD_AUTORE">
                 <input type="submit" value="Cerca">
             </fieldset>

@@ -9,6 +9,7 @@
         <h1>Ricerca Prestito</h1>
         <form method="post" action="../php/RUtente.php">
             <fieldset>
+                <p>Inserire la matricola utente:</p>
                 <input type="number" name="MATRICOLA">
                 <input type="submit" value="Cerca">
             </fieldset>
