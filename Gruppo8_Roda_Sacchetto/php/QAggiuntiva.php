@@ -7,8 +7,7 @@
     </head>
     <body>
         <h1>Query aggiuntiva 1</h1>
-        <p>Inserita una lingua viene visualizzato il numero totale di libri con la sudetta lingua affiacato dal nome e cognome del suo autore che sono stati presi in prestito</p>
-
+        <p>Inserita la lingua utilizzata per la scrittura del libro, viene visualizzato il numero totale dei libri scritti in quella lingua presi in prestito, affiancato dal nome e cognome del suo autore.</p>
         <form action="QAggiuntiva.php" method="post">
         
             <fieldset> 
