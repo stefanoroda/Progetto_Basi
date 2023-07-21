@@ -20,7 +20,7 @@
                 <input type="number" name="SUCCURSALE">
             </fieldset>
             <fieldset>
-                <label>Numero di libri pubblicati per autore</label>
+                <label>Visualizzazione del numero di libri pubblicati per autore</label>
             </fieldset>
             <input type="submit" value="Invia">
         </form>
