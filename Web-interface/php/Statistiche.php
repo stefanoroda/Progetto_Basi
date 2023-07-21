@@ -10,15 +10,17 @@
         <form action="Statistiche.php" method="post">
             <fieldset>
                 <label>Numero di libri pubblicati in un determinato anno.</label>
+                <label>Inserisci l'anno di pubblicazione:</label>
                 <input type="number" name="ANNO">
             </fieldset>
             <br>
             <fieldset>
                 <label>Numero di prestiti effettuati in una determinata succursale</label>
+                <label>Inserisci il codice della succursale:</label>
                 <input type="number" name="SUCCURSALE">
             </fieldset>
             <fieldset>
-                <label>Numero di libri pubblicati per autore</label>
+                <label>Visualizzazione del numero di libri pubblicati per autore</label>
             </fieldset>
             <input type="submit" value="Invia">
         </form>

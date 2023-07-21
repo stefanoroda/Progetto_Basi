@@ -15,17 +15,17 @@
             </fieldset>
 
             <fieldset>
-                <label>Inserisci il nome (anche parziale)</label>
+                <label>Inserisci il nome dell'autore (anche parziale)</label>
                 <input type="text" name="NOME">
             </fieldset>
 
             <fieldset>
-                <label>Inserisci il cognome (anche parziale)</label>
+                <label>Inserisci il cognome dell'autore (anche parziale)</label>
                 <input type="text" name="COGNOME">
             </fieldset>
 
             <fieldset>
-                <label>Inserisci la data (anche parziale)</label>
+                <label>Inserisci la data di nascita dell'autore (anche parziale)</label>
                 <input type="date" name="DATA_NASCITA">
             </fieldset>
 
