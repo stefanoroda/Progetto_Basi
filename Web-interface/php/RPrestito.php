@@ -47,7 +47,7 @@
             echo "Oggi è il " . date("Y-m-d") . "<br>";
             $DATA_OGGI=strtotime(date("Y-m-d"));
             $DATA_SCADENZA=strtotime("-30 days", $DATA_OGGI);
-            echo "La data di scadenza è il ".date("Y-m-d", $DATA_SCADENZA);
+            //echo "La data di scadenza è il ".date("Y-m-d", $DATA_SCADENZA);
             //devo fare un while per ogni prestito gli controllo la data di scadenza se questa è maggioreuguale della data di oggi la stampo
             try{
                 $sql = "SELECT * 
