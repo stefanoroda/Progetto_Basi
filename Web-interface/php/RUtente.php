@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>Ricerca Prestito</h1>
-        <form method="post" action="../php/RUtente.php">
+        <form method="POST" action="../php/RUtente.php">
             <fieldset>
                 <label>Inserisci la Matricola dell'utente:</label>
                 <input type="number" name="MATRICOLA">
@@ -27,10 +27,12 @@
                 <th>Data pubblicazione</th>
         </tr>
         <?php
-        include_once("config.php");
-        if($_POST != null){
+        include_once("connessione.php");
+        if($_POST != NULL) {
+          if($_POST['MATRICOLA'] != ''){
+
           
-        
+            $MATRICOLA = 0;
             $MATRICOLA = $_POST['MATRICOLA'];
         
             try{
@@ -59,7 +61,7 @@
             echo "<td>".$pre[5]."</td>";
             echo "</tr>";
             endforeach;
-        }
+        }}
             mysqli_close($link);
         ?>
         </table>

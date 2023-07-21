@@ -35,7 +35,7 @@
             <?php
 
             //IMPORTA LA CONNESSIONE DEL DATABASE
-            include_once("config.php");
+            include_once("connessione.php");
             if($_POST!= NULL){
                 $COD_AUTORE   = $_POST['COD_AUTORE'];
             

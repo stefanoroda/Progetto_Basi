@@ -18,7 +18,7 @@
                 <th>Conteggio Prestiti</th>
             </tr>
         <?php
-            include_once("config.php");
+            include_once("connessione.php");
             
             try {
                 $sql="SELECT UTENTE.MATRICOLA, UTENTE.NOME, UTENTE.COGNOME, CONTEGGIO.DIPARTIMENTO,CONTEGGIO.CONTEGGIO

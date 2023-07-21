@@ -24,7 +24,7 @@
         <a href="../index.html">Home</a><br>
         <?php
         
-        include_once("config.php");
+        include_once("connessione.php");
         $query="";
         if($_POST != null){
         if(!isset($_POST['DATA_1']) || $_POST['DATA_1'] != '' ){

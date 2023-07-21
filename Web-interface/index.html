@@ -74,7 +74,7 @@
                             WHERE DATA_PRESTITO BETWEEN '$DATA1' AND '$DATA2'"</ul>
                         <ul>b. "SELECT * 
                             FROM PRESTITO
-                            WHERE DATA_PRESTITO &#60 '".date("Y-m-d", $DATA_SCADENZA)."'"</ul>
+                            WHERE DATEDIFF('".date("Y-m-d", $DATA_SCADENZA)."',DATA_PRESTITO)<30"</ul>
                     </lu>
                 </p>
             </ul>
