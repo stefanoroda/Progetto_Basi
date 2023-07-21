@@ -1,31 +1,45 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Prestito</title>
+        <title>Ricerca</title>
         <link rel="stylesheet" href="../css/retro.css">
         <link rel="stylesheet" href="../css/mycss.css">
     </head>
     <body>
-        <h1>Visualizzazione Prestiti</h1>
+        <h1>Ricerca Prestito</h1>
+        <form method="POST" action="../php/RUtente.php">
+            <fieldset>
+                <label>Inserisci la Matricola dell'utente:</label>
+                <input type="number" name="MATRICOLA">
+                <input type="submit" value="Cerca">
+            </fieldset>
+        </form>
+        <br>
         <a href="../index.html">Home</a>
         <br><br>
         <table>
-            <tr>
+        <tr>
                 <th>Codice Prestito</th>
                 <th>Data Prestito</th>
-                <th>Codice Libro</th>
-                <th>Titolo</th>
-                <th>Matricola</th>
-                <th>Nome Utente</th>
-                <th>Cognome Utente</th>
-            </tr>
-            <?php
-            include_once("connessione.php");
+                <th>Titolo Libro</th>
+                <th>ISBN</th>
+                <th>Lingua</th>
+                <th>Data pubblicazione</th>
+        </tr>
+        <?php
+        include_once("connessione.php");
+        if($_POST != NULL) {
+          if($_POST['MATRICOLA'] != ''){
+
+          
+            $MATRICOLA = 0;
+            $MATRICOLA = $_POST['MATRICOLA'];
+        
             try{
-                $sql = "SELECT COD_PRESTITO, DATA_PRESTITO, PRESTITO.COD_LIBRO, TITOLO, PRESTITO.MATRICOLA, NOME, COGNOME 
-                FROM ((PRESTITO
-                INNER JOIN UTENTE ON PRESTITO.MATRICOLA=UTENTE.MATRICOLA)
-                INNER JOIN LIBRO ON PRESTITO.COD_LIBRO = LIBRO.COD_LIBRO)";
+                $sql = "SELECT PRESTITO.COD_LIBRO, DATA_PRESTITO,TITOLO,ISBN,LINGUA,ANNO_PUB
+                FROM (PRESTITO 
+                INNER JOIN LIBRO ON PRESTITO.COD_LIBRO = LIBRO.COD_LIBRO) 
+                WHERE MATRICOLA=".$MATRICOLA;
                 $query=mysqli_query($link,$sql);
             }catch (mysqli_sql_exception $e) {
                 echo("Errore per la visualizzazione dei prestiti: " . $e->getMessage() . "<br>");
@@ -45,12 +59,11 @@
             echo "<td>".$pre[3]."</td>";
             echo "<td>".$pre[4]."</td>";
             echo "<td>".$pre[5]."</td>";
-            echo "<td>".$pre[6]."</td>";
             echo "</tr>";
             endforeach;
-        
+        }}
             mysqli_close($link);
-            ?>
+        ?>
         </table>
     </body>
 </html>

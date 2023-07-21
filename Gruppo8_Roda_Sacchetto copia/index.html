@@ -121,7 +121,7 @@
                     GROUP BY AUTORE.COD_AUTORE"</p>
             </ul>
             <ul>2) <a href="php/QAggiuntiva2.php"> Query_2A</a>
-                <p>Si visualizzano per ogni utente il numero di prestiti suddivisi per dipartimento.</p>
+                <p>Si visualizzano gli utenti che hanno effettuato il maggior numero di prestiti per un dipartimento, così da visualizzare al meglio il flusso dei prestiti, suddividendolo per dipartimento.</p>
                 <p>Query="SELECT UTENTE.MATRICOLA, UTENTE.NOME, UTENTE.COGNOME, CONTEGGIO.DIPARTIMENTO,CONTEGGIO.CONTEGGIO
                     FROM UTENTE
                      JOIN (

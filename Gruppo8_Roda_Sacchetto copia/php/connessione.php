@@ -2,7 +2,7 @@
 $servename = "localhost";
 $username = "tobia";
 $password = "password";
-$db = "biblioteca"; 
+$db = "biblioteca";
 try {
 	// Connessione al database
 	$link = mysqli_connect($servename, $username, $password, $db);	// db_ip, db_username, db_password, db_name

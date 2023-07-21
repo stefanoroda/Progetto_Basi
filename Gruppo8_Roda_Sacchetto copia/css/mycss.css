@@ -1,0 +1,72 @@
+h2 {
+    text-align: center;
+}
+
+/* ccs in cui ho messo le mie formattazioni per il testo, il body e l'head */
+input[type=submit]:hover {
+    background: #9b9b9b;
+}
+
+input[type=submit] {
+    margin-right: 6px;
+    margin-bottom: 6px;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+input[type=text] {
+    background: white;
+    font-family: inherit;
+    font-size: inherit;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    outline-color: #01ff70;
+}
+
+h1 {
+    text-align: center;
+}
+
+fieldset {
+    border: none;
+}
+
+input[type=date] {
+    font-family: inherit;
+    font-size: inherit;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    padding: 10px;
+    outline-color: #01ff70;
+    border-radius: 6px;
+}
+
+input[type=number] {
+    font-family: inherit;
+    font-size: inherit;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    padding: 10px;
+    outline-color: #01ff70;
+    border-radius: 6px;
+    border: none;
+}
+
+table {
+    table-layout: auto;
+    width: auto;
+    max-width: 100%;
+    border-collapse: collapse;
+  }
+  
+  td, th {
+    padding: 8px;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
