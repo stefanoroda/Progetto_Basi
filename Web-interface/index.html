@@ -28,7 +28,7 @@
             </ul>
             <ul>2) <a href="php/Autore.php"> Query_2</a>
             <p>Visualizzazione di tutti i libri di un determinato autore, eventualmente suddivisi per anno di pubblicazione.</p>
-            <p>Query="SELECT LIBRO *
+            <p>Query="SELECT LIBRO.*
                 FROM (LIBRO
                 INNER JOIN BOOK_AUTHORS ON BOOK_AUTHORS.COD_LIBRO = LIBRO.COD_LIBRO)
                 WHERE COD_AUTORE='$COD_AUTORE'
