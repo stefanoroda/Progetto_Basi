@@ -1,6 +1,6 @@
 <?php 
     //IMPORTA LA CONNESSIONE DEL DATABASE
-    include_once("config.php");
+    include_once("connessione.php");
 ?>
 
 <!DOCTYPE html>

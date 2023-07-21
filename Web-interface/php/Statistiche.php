@@ -28,7 +28,7 @@
         <a href="../index.html">Home</a>
         <br>
         <?php
-            include_once("config.php");
+            include_once("connessione.php");
             if($_POST!=null){
                 $ANNO=$_POST['ANNO'];
                 $SUCCURSALE=$_POST['SUCCURSALE'];
